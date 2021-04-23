@@ -1,0 +1,17 @@
+<!-- <h2>{{task.title | uppercase}} Details</h2>
+<div><span>id: </span>{{task.id}}</div>
+<div><span>name: </span>{{task.description}}</div>
+
+<div>
+    <label for="description">Desc. title: </label>
+    <input id="description" [(ngModel)]="task.description" placeholder="Description">
+</div>-->
+<h2>My Tasks</h2>
+<ul class="tasks">
+    <li *ngFor="let task of tasks">
+        <!-- <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)"> -->
+        <a routerLink="/taskdetail/{{task.id}}">
+            <span class=" badge ">{{task.id}}</span> {{task.title}}
+        </a>
+    </li>
+</ul>
